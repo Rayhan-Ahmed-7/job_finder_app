@@ -28,11 +28,11 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
           <TextInput
             style={styles.searchInput}
             value={searchTerm}
-            onChange={(text) => setSearchTerm(text)}
+            onChange={(e) => setSearchTerm(e.nativeEvent.text)}
             placeholder='What are you looking for?'
           />
         </View>
-        <TouchableOpacity style={styles.searchBtn} onPress={() => { handleClick }}>
+        <TouchableOpacity style={styles.searchBtn} onPress={() => handleClick()}>
           <Image
             source={icons.search}
             resizeMode='contain'
