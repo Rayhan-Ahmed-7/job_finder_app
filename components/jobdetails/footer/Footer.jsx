@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, Image, Linking } from "react-native";
-
+import * as WebBrowser from 'expo-web-browser';
 import styles from "./footer.style";
 import { icons } from "../../../constants";
 
@@ -16,7 +16,8 @@ const Footer = ({ url }) => {
 
       <TouchableOpacity
         style={styles.applyBtn}
-        onPress={() => Linking.openURL(url)}
+        // onPress={() => Linking.openURL(url)}
+        onPress={() => WebBrowser.openBrowserAsync(url)}
       >
         <Text style={styles.applyBtnText}>Apply for job</Text>
       </TouchableOpacity>
